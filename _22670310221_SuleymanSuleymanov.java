@@ -30,7 +30,8 @@ public class _22670310221_SuleymanSuleymanov {
                     kuyruk.kuyruguYazdir();
                 }
                 if (komut.equals("peek")) {
-                    // TODO - peek
+                    Object peekResult = kuyruk.peek();
+                    System.out.println("p-> " + peekResult + " Peek sonucu");
                 }
                 if (komut.equals("boşMu")) {
                     // TODO - isEmpty
@@ -129,6 +130,10 @@ public class _22670310221_SuleymanSuleymanov {
             }
             System.out.print(" :Sonu|");
             System.out.println(" ");
+        }
+
+        public Object peek() {
+            return array[front];
         }
     }
 }
