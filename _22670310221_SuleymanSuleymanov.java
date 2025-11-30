@@ -11,7 +11,7 @@ public class _22670310221_SuleymanSuleymanov {
             int capacity = Integer.parseInt(reader.readLine().trim());
             Kuyruk kuyruk = new Kuyruk(capacity);
 
-            List<String> tipler = Arrays.asList(reader.readLine().split(" "));
+            List<String> izinVerilerTipler = Arrays.asList(reader.readLine().split(" "));
 
             String okunanSatir;
             while ((okunanSatir = reader.readLine()) != null) {
@@ -43,6 +43,32 @@ public class _22670310221_SuleymanSuleymanov {
             e1.printStackTrace();
         }
 
+    }
+
+    public static Object veriHazirla(String hamVeri, List<String> izinVerilenTipler) {
+        if (izinVerilenTipler.contains("int")) {
+            try {
+                return Integer.parseInt(hamVeri);
+            } catch (NumberFormatException e) {
+
+            }
+        }
+        if (izinVerilenTipler.contains("double")) {
+            try {
+                return Double.parseDouble(hamVeri);
+            } catch (NumberFormatException e) {
+
+            }
+        }
+        if (izinVerilenTipler.contains("char")) {
+            if (hamVeri.length() <= 3 && hamVeri.charAt(0) == '\'' && hamVeri.charAt(2) == '\'') {
+                return hamVeri.charAt(1);
+            }
+        }
+        if (izinVerilenTipler.contains("String")) {
+            return hamVeri;
+        }
+        return null;
     }
 
     public static class Kuyruk {
