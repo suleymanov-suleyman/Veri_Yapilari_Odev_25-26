@@ -27,7 +27,7 @@ public class _22670310221_SuleymanSuleymanov {
                     kuyruk.dequeue();
                 }
                 if (komut.equals("yazdır")) {
-                    kuyruk.print();
+                    kuyruk.kuyruguYazdir();
                 }
                 if (komut.equals("peek")) {
                     // TODO - peek
@@ -97,7 +97,7 @@ public class _22670310221_SuleymanSuleymanov {
             array[rear] = eklenecekVeri;
             size++;
             System.out.println("+-> " + eklenecekVeri + " Kuyruğa eklendi");
-            print();
+            kuyruguYazdir();
         }
 
         public void dequeue() {
@@ -109,7 +109,7 @@ public class _22670310221_SuleymanSuleymanov {
             front = (front + 1) % capacity;
 
             System.out.println("x-> " + silinecekVeri + " Kuyruktan çıktı");
-            print();
+            kuyruguYazdir();
 
             if (size < capacity / 2) {
                 // TODO - resize implement
@@ -117,7 +117,7 @@ public class _22670310221_SuleymanSuleymanov {
             size--;
         }
 
-        public void print() {
+        public void kuyruguYazdir() {
             System.out.print("Kapasite: " + capacity + " |Eleman Sayısı: " + size + " |Başı: ");
 
             for (int i = 0; i < capacity; i++) {
