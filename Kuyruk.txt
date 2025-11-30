@@ -10,5 +10,6 @@ ekle 5.712
 ekle 'b'
 çıkar
 peek
-
-
+boşMu
+doluMu
+yazdır

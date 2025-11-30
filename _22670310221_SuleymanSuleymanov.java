@@ -34,10 +34,18 @@ public class _22670310221_SuleymanSuleymanov {
                     System.out.println("p-> " + peekResult + " Peek sonucu");
                 }
                 if (komut.equals("boşMu")) {
-                    // TODO - isEmpty
+                    if (kuyruk.isEmpty()) {
+                        System.out.println("e-+> Kuyruk şu an boş!");
+                    } else {
+                        System.out.println("e-x> Kuyruk boş değil!");
+                    }
                 }
                 if (komut.equals("doluMu")) {
-                    // TODO - isFull
+                    if (kuyruk.isFull()) {
+                        System.out.println("f-+> Kuyruk şu an dolu!");
+                    } else {
+                        System.out.println("f-x> Kuyruk şu an boş!");
+                    }
                 }
             }
         } catch (FileNotFoundException e) {
@@ -97,7 +105,7 @@ public class _22670310221_SuleymanSuleymanov {
             rear = (rear + 1) % capacity;
             array[rear] = eklenecekVeri;
             size++;
-            System.out.println("+-> " + eklenecekVeri + " Kuyruğa eklendi");
+            System.out.println("+--> " + eklenecekVeri + " Kuyruğa eklendi");
             kuyruguYazdir();
         }
 
@@ -109,7 +117,7 @@ public class _22670310221_SuleymanSuleymanov {
             array[front] = null;
             front = (front + 1) % capacity;
 
-            System.out.println("x-> " + silinecekVeri + " Kuyruktan çıktı");
+            System.out.println("x--> " + silinecekVeri + " Kuyruktan çıktı");
             kuyruguYazdir();
 
             if (size < capacity / 2) {
@@ -134,6 +142,22 @@ public class _22670310221_SuleymanSuleymanov {
 
         public Object peek() {
             return array[front];
+        }
+
+        public boolean isEmpty() {
+            if (size == 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public boolean isFull() {
+            if (size == capacity) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }
