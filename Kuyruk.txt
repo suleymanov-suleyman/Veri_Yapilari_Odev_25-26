@@ -1,0 +1,14 @@
+2
+int double char
+ekle 45
+ekle 'A'
+ekle 3.14
+çıkar
+çıkar
+ekle 90
+ekle 5.712
+ekle 'b'
+çıkar
+peek
+
+
