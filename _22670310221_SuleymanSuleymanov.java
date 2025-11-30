@@ -85,14 +85,14 @@ public class _22670310221_SuleymanSuleymanov {
 
     public static class Kuyruk {
         int capacity;
-        Object[] array;
+        Object[] mainArray;
         int size;
         int front;
         int rear;
 
         public Kuyruk(int capacity) {
             this.capacity = capacity;
-            this.array = new Object[capacity];
+            this.mainArray = new Object[capacity];
             this.front = 0;
             this.rear = -1;
             this.size = 0;
@@ -106,8 +106,9 @@ public class _22670310221_SuleymanSuleymanov {
 
             for (int i = 0; i < size; i++) {
                 front = (front + i) % capacity;
-                tempArray[i] = array[front];
+                tempArray[i] = mainArray[front];
             }
+            mainArray = tempArray;
         }
 
         public void enqueue(Object eklenecekVeri) {
@@ -115,7 +116,7 @@ public class _22670310221_SuleymanSuleymanov {
                 // TODO - resize
             }
             rear = (rear + 1) % capacity;
-            array[rear] = eklenecekVeri;
+            mainArray[rear] = eklenecekVeri;
             size++;
             System.out.println("+--> " + eklenecekVeri + " Kuyruğa eklendi");
             kuyruguYazdir();
@@ -125,8 +126,8 @@ public class _22670310221_SuleymanSuleymanov {
             if (size == 0) {
                 return;
             }
-            Object silinecekVeri = array[front];
-            array[front] = null;
+            Object silinecekVeri = mainArray[front];
+            mainArray[front] = null;
             front = (front + 1) % capacity;
 
             System.out.println("x--> " + silinecekVeri + " Kuyruktan çıktı");
@@ -153,7 +154,7 @@ public class _22670310221_SuleymanSuleymanov {
         }
 
         public Object peek() {
-            return array[front];
+            return mainArray[front];
         }
 
         public boolean isEmpty() {
