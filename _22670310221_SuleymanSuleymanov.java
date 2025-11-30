@@ -7,7 +7,7 @@ import java.util.List;
 
 public class _22670310221_SuleymanSuleymanov {
     public static void main(String[] args) {
-        try (BufferedReader reader = new BufferedReader(new FileReader("kuyruk.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("Kuyruk.txt"))) {
             int capacity = Integer.parseInt(reader.readLine().trim());
             Kuyruk kuyruk = new Kuyruk(capacity);
 
@@ -84,6 +84,15 @@ public class _22670310221_SuleymanSuleymanov {
             this.front = 0;
             this.rear = -1;
             this.size = 0;
+        }
+
+        public void enqueue(Object eklenecekVeri) {
+            if (size == capacity) {
+                // TODO - resize
+            }
+            rear = (rear + 1) % capacity;
+            array[rear] = eklenecekVeri;
+            size++;
         }
     }
 }
