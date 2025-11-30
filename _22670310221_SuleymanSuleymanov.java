@@ -44,7 +44,7 @@ public class _22670310221_SuleymanSuleymanov {
                     if (kuyruk.isFull()) {
                         System.out.println("f-+> Kuyruk şu an dolu!");
                     } else {
-                        System.out.println("f-x> Kuyruk şu an boş!");
+                        System.out.println("f-x> Kuyruk şu an dolu değil!");
                     }
                 }
             }
@@ -99,7 +99,7 @@ public class _22670310221_SuleymanSuleymanov {
         }
 
         public void resize(int resizeValue) {
-            if (capacity <= 2) {
+            if (capacity < 2) {
                 return;
             }
             Object[] tempArray = new Object[resizeValue];
@@ -109,6 +109,8 @@ public class _22670310221_SuleymanSuleymanov {
                 tempArray[i] = mainArray[front];
             }
             mainArray = tempArray;
+            capacity = resizeValue;
+            front = 0;
         }
 
         public void enqueue(Object eklenecekVeri) {
@@ -131,22 +133,23 @@ public class _22670310221_SuleymanSuleymanov {
             front = (front + 1) % capacity;
 
             System.out.println("x--> " + silinecekVeri + " Kuyruktan çıktı");
-            kuyruguYazdir();
 
+            size--;
             if (size < capacity / 2) {
                 if (capacity > 2) {
                     resize(capacity / 2);
                 }
             }
-            size--;
+            kuyruguYazdir();
         }
 
         public void kuyruguYazdir() {
             System.out.print("Kapasite: " + capacity + " |Eleman Sayısı: " + size + " |Başı: ");
 
             for (int i = 0; i < capacity; i++) {
-                Object ekranaYazdirilacakElaman = (rear + i) % capacity;
-                System.out.print(ekranaYazdirilacakElaman);
+                int ekranaYazdirilacakElamanIndexi = (front + i) % capacity;
+
+                System.out.print(mainArray[ekranaYazdirilacakElamanIndexi]);
                 if (i <= capacity - 2) {
                     System.out.print(", ");
                 }
