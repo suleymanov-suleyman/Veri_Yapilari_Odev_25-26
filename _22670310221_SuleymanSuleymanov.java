@@ -99,7 +99,15 @@ public class _22670310221_SuleymanSuleymanov {
         }
 
         public void resize(int resizeValue) {
-            
+            if (capacity <= 2) {
+                return;
+            }
+            Object[] tempArray = new Object[resizeValue];
+
+            for (int i = 0; i < size; i++) {
+                front = (front + i) % capacity;
+                tempArray[i] = array[front];
+            }
         }
 
         public void enqueue(Object eklenecekVeri) {
