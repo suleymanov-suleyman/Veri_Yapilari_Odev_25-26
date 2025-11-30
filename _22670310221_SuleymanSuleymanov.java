@@ -13,6 +13,29 @@ public class _22670310221_SuleymanSuleymanov {
 
             List<String> tipler = Arrays.asList(reader.readLine().split(" "));
 
+            String okunanSatir;
+            while ((okunanSatir = reader.readLine()) != null) {
+                String[] parcalar = okunanSatir.split(" ");
+                String komut = parcalar[0];
+                if (komut.equals("ekle")) {
+                    // TODO - enqueue
+                }
+                if (komut.equals("çıkar")) {
+                    // TODO - dequeue
+                }
+                if (komut.equals("yazdır")) {
+                    // TODO - print
+                }
+                if (komut.equals("peek")) {
+                    // TODO - peek
+                }
+                if (komut.equals("boşMu")) {
+                    // TODO - isEmpty
+                }
+                if (komut.equals("doluMu")) {
+                    // TODO - isFull
+                }
+            }
         } catch (FileNotFoundException e) {
             System.out.println("Dosya Bulunamadi!");
             e.printStackTrace();
