@@ -94,5 +94,18 @@ public class _22670310221_SuleymanSuleymanov {
             array[rear] = eklenecekVeri;
             size++;
         }
+
+        public void print() {
+            System.out.print("Kapasite: " + capacity + "Eleman Sayısı: " + size + " |Başı: ");
+
+            for (int i = 0; i < capacity; i++) {
+                Object ekranaYazdirilacakElaman = (rear + i) % capacity;
+                System.out.print(ekranaYazdirilacakElaman);
+                if (i <= capacity - 1) {
+                    System.out.println(", ");
+                }
+            }
+            System.out.println(" :Sonu|");
+        }
     }
 }
