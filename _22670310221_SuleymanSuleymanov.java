@@ -98,6 +98,10 @@ public class _22670310221_SuleymanSuleymanov {
             this.size = 0;
         }
 
+        public void resize(int resizeValue) {
+            
+        }
+
         public void enqueue(Object eklenecekVeri) {
             if (size == capacity) {
                 // TODO - resize
