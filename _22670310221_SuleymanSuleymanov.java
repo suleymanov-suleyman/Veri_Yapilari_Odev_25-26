@@ -65,7 +65,7 @@ public class _22670310221_SuleymanSuleymanov {
         }
         if (izinVerilenTipler.contains("char")) {
             if (hamVeri.length() <= 3 && hamVeri.charAt(0) == '\'' && hamVeri.charAt(2) == '\'') {
-                return hamVeri.charAt(1);
+                return hamVeri;
             }
         }
         if (izinVerilenTipler.contains("String")) {
@@ -108,7 +108,7 @@ public class _22670310221_SuleymanSuleymanov {
             array[front] = null;
             front = (front + 1) % capacity;
 
-            System.out.println("x-> " + silinecekVeri + "Kuyruktan çıktı");
+            System.out.println("x-> " + silinecekVeri + " Kuyruktan çıktı");
             print();
 
             if (size < capacity / 2) {
