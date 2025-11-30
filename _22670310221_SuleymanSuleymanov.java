@@ -17,8 +17,11 @@ public class _22670310221_SuleymanSuleymanov {
             while ((okunanSatir = reader.readLine()) != null) {
                 String[] parcalar = okunanSatir.split(" ");
                 String komut = parcalar[0];
+                String hamVeri;
                 if (komut.equals("ekle")) {
-                    // TODO - enqueue
+                    hamVeri = parcalar[1];
+                    Object islenmisVeri = veriHazirla(hamVeri, izinVerilerTipler);
+                    kuyruk.enqueue(islenmisVeri);
                 }
                 if (komut.equals("çıkar")) {
                     // TODO - dequeue
