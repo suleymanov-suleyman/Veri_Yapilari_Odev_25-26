@@ -113,7 +113,7 @@ public class _22670310221_SuleymanSuleymanov {
 
         public void enqueue(Object eklenecekVeri) {
             if (size == capacity) {
-                // TODO - resize
+                resize(capacity * 2);
             }
             rear = (rear + 1) % capacity;
             mainArray[rear] = eklenecekVeri;
@@ -134,7 +134,9 @@ public class _22670310221_SuleymanSuleymanov {
             kuyruguYazdir();
 
             if (size < capacity / 2) {
-                // TODO - resize implement
+                if (capacity > 2) {
+                    resize(capacity / 2);
+                }
             }
             size--;
         }
