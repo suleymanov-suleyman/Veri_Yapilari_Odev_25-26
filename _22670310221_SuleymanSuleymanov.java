@@ -96,19 +96,22 @@ public class _22670310221_SuleymanSuleymanov {
             rear = (rear + 1) % capacity;
             array[rear] = eklenecekVeri;
             size++;
+            System.out.println("-> " + eklenecekVeri + " Kuyruğa eklendi");
+            print();
         }
 
         public void print() {
-            System.out.print("Kapasite: " + capacity + "Eleman Sayısı: " + size + " |Başı: ");
+            System.out.print("Kapasite: " + capacity + " |Eleman Sayısı: " + size + " |Başı: ");
 
             for (int i = 0; i < capacity; i++) {
                 Object ekranaYazdirilacakElaman = (rear + i) % capacity;
                 System.out.print(ekranaYazdirilacakElaman);
-                if (i <= capacity - 1) {
-                    System.out.println(", ");
+                if (i <= capacity - 2) {
+                    System.out.print(", ");
                 }
             }
-            System.out.println(" :Sonu|");
+            System.out.print(" :Sonu|");
+            System.out.println(" ");
         }
     }
 }
