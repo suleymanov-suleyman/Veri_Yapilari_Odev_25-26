@@ -100,6 +100,23 @@ public class _22670310221_SuleymanSuleymanov {
             print();
         }
 
+        public void dequeue() {
+            if (size == 0) {
+                return;
+            }
+            Object silinecekVeri = array[front];
+            array[front] = null;
+            front = (front + 1) % capacity;
+
+            System.out.println("-> " + silinecekVeri + "Kuyruktan çıktı");
+            print();
+
+            if (size < capacity / 2) {
+                // TODO - resize implement
+            }
+            size--;
+        }
+
         public void print() {
             System.out.print("Kapasite: " + capacity + " |Eleman Sayısı: " + size + " |Başı: ");
 
