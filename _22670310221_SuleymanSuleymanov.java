@@ -21,7 +21,11 @@ public class _22670310221_SuleymanSuleymanov {
                 if (komut.equals("ekle")) {
                     hamVeri = parcalar[1];
                     Object islenmisVeri = veriHazirla(hamVeri, izinVerilerTipler);
-                    kuyruk.enqueue(islenmisVeri);
+                    if (islenmisVeri != null) {
+                        kuyruk.enqueue(islenmisVeri);
+                    } else {
+                        System.out.println("Hata: " + hamVeri + " uygun formatta değil, değer eklenmedi.");
+                    }
                 }
                 if (komut.equals("çıkar")) {
                     kuyruk.dequeue();
@@ -99,18 +103,18 @@ public class _22670310221_SuleymanSuleymanov {
         }
 
         public void resize(int resizeValue) {
-            if (capacity < 2) {
+            if (capacity < 2 && resizeValue < capacity) {
                 return;
             }
             Object[] tempArray = new Object[resizeValue];
 
             for (int i = 0; i < size; i++) {
-                front = (front + i) % capacity;
-                tempArray[i] = mainArray[front];
+                tempArray[i] = mainArray[(front + i) % capacity];
             }
             mainArray = tempArray;
             capacity = resizeValue;
             front = 0;
+            rear = size - 1;
         }
 
         public void enqueue(Object eklenecekVeri) {
@@ -146,11 +150,10 @@ public class _22670310221_SuleymanSuleymanov {
         public void kuyruguYazdir() {
             System.out.print("Kapasite: " + capacity + " |Eleman Sayısı: " + size + " |Başı: ");
 
-            for (int i = 0; i < capacity; i++) {
-                int ekranaYazdirilacakElamanIndexi = (front + i) % capacity;
-
-                System.out.print(mainArray[ekranaYazdirilacakElamanIndexi]);
-                if (i <= capacity - 2) {
+            for (int i = 0; i < size; i++) {
+                int index = (front + i) % capacity;
+                System.out.print(mainArray[index]);
+                if (i <= size - 2) {
                     System.out.print(", ");
                 }
             }
